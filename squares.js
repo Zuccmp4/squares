@@ -39,18 +39,20 @@ function getRandomColor(){
 
 function addSquare(){
 
-    let newsquareButton = document.getElementById(".addSquare");
+    let newSquare = document.createElement("div");
+    
+    newSquare.className = "square";
+       
+       newSquare.style.left = parseInt(Math.random()*650) + "px";
+       newSquare.style.top = parseInt(Math.random()*250) + "px";
+       newSquare.style.backgroundColor = getRandomColor();
 
-    newsquareButton.addEventListener("click", ()=>{
-       let newSquare = document.createElement("div");
-       newSquare.className = "square";
-       square
-
-
-    });
+       squareArea.append(newSquare);
 
 }
 
+let newsquareButton = document.getElementById("addSquare");
+newsquareButton.addEventListener("click", (addSquare));
 
 //Make a function that changes all the colors of all the squares
 //Make sure the button calls it
