@@ -66,7 +66,7 @@ function addSquare(){
     newSquare.style.left = parseInt(Math.random()*650) + "px";
     newSquare.style.top = parseInt(Math.random()*250) + "px";
     newSquare.style.backgroundColor = getRandomColor();
-    
+
     newSquare.style.zIndex = 0;
 
     newSquare.onclick = function(){
@@ -78,7 +78,6 @@ function addSquare(){
 }
 
 let newsquareButton = document.getElementById("addSquare");
-newsquareButton.addEventListener("click", (addSquare));
 document.getElementById("addSquare").onclick = addSquare;
 document.getElementById("changeColors").onclick = changeColors;
 
