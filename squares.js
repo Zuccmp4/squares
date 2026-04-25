@@ -14,6 +14,7 @@ for (let i = 0; i<squareCount; i++){
     square.style.left = parseInt(Math.random()*650) + "px";
     square.style.top = parseInt(Math.random()*250) + "px";
     square.style.backgroundColor = getRandomColor();
+
     square.style.zIndex = 0;
     
     //I can put a onclick and a function(this)
@@ -65,6 +66,7 @@ function addSquare(){
     newSquare.style.left = parseInt(Math.random()*650) + "px";
     newSquare.style.top = parseInt(Math.random()*250) + "px";
     newSquare.style.backgroundColor = getRandomColor();
+    
     newSquare.style.zIndex = 0;
 
     newSquare.onclick = function(){
@@ -78,20 +80,19 @@ function addSquare(){
 let newsquareButton = document.getElementById("addSquare");
 newsquareButton.addEventListener("click", (addSquare));
 document.getElementById("addSquare").onclick = addSquare;
+document.getElementById("changeColors").onclick = changeColors;
 
 //Make a function that changes all the colors of all the squares
 //Make sure the button calls it
-//
+
 function changeColors(){
     //make an array
     let allSquares = document.querySelectorAll(".square");
     //For loop with index or For of loop
     //Change the color
-
-
-
+    for (let i = 0; i < allSquares.length;i++){
+        allSquares[i].style.backgroundColor = getRandomColor();
+    }
 }
 
-//make a variable with giant number for the z-index
-    //for when clicking on squares to bring them to the front
 
