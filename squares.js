@@ -3,7 +3,9 @@
 let squareArea = document.querySelector("#squarearea");
 
 let squareCount = parseInt(Math.random()*21)+30; // 30-50
+
 //Make variable to really big z index
+let increaseZIndex = 1001;
 
 for (let i = 0; i<squareCount; i++){
     //make a square
@@ -35,6 +37,21 @@ function getRandomColor(){
 //Make a function to add one square
 //Make sure I set that as the onclick for the button
 
+function addSquare(){
+
+    let newsquareButton = document.getElementById(".addSquare");
+
+    newsquareButton.addEventListener("click", ()=>{
+       let newSquare = document.createElement("div");
+       newSquare.className = "square";
+       square
+
+
+    });
+
+}
+
+
 //Make a function that changes all the colors of all the squares
 //Make sure the button calls it
 //
@@ -43,6 +60,9 @@ function changeColors(){
     let allSquares = document.querySelectorAll(".square");
     //For loop with index or For of loop
     //Change the color
+
+
+
 }
 
 //make a variable with giant number for the z-index
