@@ -14,11 +14,30 @@ for (let i = 0; i<squareCount; i++){
     square.style.left = parseInt(Math.random()*650) + "px";
     square.style.top = parseInt(Math.random()*250) + "px";
     square.style.backgroundColor = getRandomColor();
+    square.style.zIndex = 0;
+    
     //I can put a onclick and a function(this)
-    // if the z index of the square selected is 
-        // already in the front remove the square
-    //put it on the screen
+    square.onclick = function(){
+        clickedSquare(this);
+    };
+
     squareArea.append(square);
+}
+
+
+// if the z index of the square selected is 
+        // already in the front remove the square or bring to front
+let clickedSquare = function(square){
+
+        if (square.style.zIndex == increaseZIndex - 1)
+        {
+            square.remove();
+        } else {
+            square.style.zIndex = increaseZIndex;
+            increaseZIndex++;
+        }
+
+
 }
 
 
@@ -43,16 +62,22 @@ function addSquare(){
     
     newSquare.className = "square";
        
-       newSquare.style.left = parseInt(Math.random()*650) + "px";
-       newSquare.style.top = parseInt(Math.random()*250) + "px";
-       newSquare.style.backgroundColor = getRandomColor();
+    newSquare.style.left = parseInt(Math.random()*650) + "px";
+    newSquare.style.top = parseInt(Math.random()*250) + "px";
+    newSquare.style.backgroundColor = getRandomColor();
+    newSquare.style.zIndex = 0;
 
-       squareArea.append(newSquare);
+    newSquare.onclick = function(){
+        clickedSquare(this);
+    };
+
+    squareArea.append(newSquare);
 
 }
 
 let newsquareButton = document.getElementById("addSquare");
 newsquareButton.addEventListener("click", (addSquare));
+document.getElementById("addSquare").onclick = addSquare;
 
 //Make a function that changes all the colors of all the squares
 //Make sure the button calls it
