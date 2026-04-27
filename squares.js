@@ -93,5 +93,3 @@ function changeColors(){
         allSquares[i].style.backgroundColor = getRandomColor();
     }
 }
-
-
